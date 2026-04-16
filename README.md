@@ -2,11 +2,18 @@
 
 <img width="377" height="800" alt="01" src="https://github.com/user-attachments/assets/625b212b-83fe-4cf8-8f91-66f309c20b17" />
 
-## Download 
+## Download
 
-Baixe a versão mais recente:
-[Wiser Rank System v1.6.0](../../releases/latest)
+Baixe a versão mais recente ou escolha uma versão específica:
 
+- 📦 **Última versão (recomendada)**  
+  👉 [Wiser Rank System v1.6.0](../../releases/tag/Wiser-Rank-System-v1.6.0)
+
+- 🗂️ **Outras versões**  
+  - [Wiser Rank System v1.6.0](../../releases/tag/Wiser-Rank-System-v1.6.0)  
+  - [Wiser Rank System v1.5.5](../../releases/tag/Wiser-Rank-System-v1.5.5)
+
+🔗 Ver todas as versões: [Releases](../../releases)
 
 ## Visão Geral
 
