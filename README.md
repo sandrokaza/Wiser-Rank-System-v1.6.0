@@ -5,7 +5,7 @@
 ## Releases
 
 Download:
-📦 [Wiser-Rank-System-v1.6.0](../../archive/refs/tags/Wiser-Rank-System-v1.6.0.zip)
+📦 (../../archive/refs/tags/Wiser-Rank-System-v1.6.0.zip)
 
 ## Visão Geral
 
