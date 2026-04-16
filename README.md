@@ -1,11 +1,11 @@
 # Wiser-Rank-System-v1.6.0
 
-## 🚀 Releases
+<img width="377" height="800" alt="01" src="https://github.com/user-attachments/assets/625b212b-83fe-4cf8-8f91-66f309c20b17" />
+
+## Releases
 
 Download:
 [Wiser-Rank-System-v1.6.0](../../releases)
-
-<img width="377" height="800" alt="01" src="https://github.com/user-attachments/assets/625b212b-83fe-4cf8-8f91-66f309c20b17" />
 
 ## Visão Geral
 
@@ -62,12 +62,6 @@ O script irá processar automaticamente todos os elementos vinculados, atualizan
 - Alterações manuais fora do padrão podem exigir reconfiguração dos identificadores
 - Recomenda-se manter um padrão organizacional para garantir máxima eficiência
 
-## 📜 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🚀 Releases
-
-You can download the latest version of the script here:
-
-👉 [Download Latest Release](../../releases)
+Este projeto está licenciado sob a licença MIT — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
