@@ -1,7 +1,7 @@
 
 # Wiser-Rank-System
 
-<img width="1080" height="1080" alt="Untitled-1" src="https://github.com/user-attachments/assets/80264725-c0f2-4c92-b94e-b0e3e98fbb97" />
+<img width="1080" height="1080" alt="Untitled-1" src="https://github.com/user-attachments/assets/9d452935-fcc1-4f80-a625-6721e1189088" />
 
 ## Download
 
