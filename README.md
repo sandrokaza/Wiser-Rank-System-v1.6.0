@@ -20,7 +20,7 @@ A solução foi projetada para fluxos de trabalho que exigem atualizações freq
 
 ## Arquitetura do Sistema
 
-A ferramenta utiliza um sistema de identificação interna baseado em metadados das composições (campo `Comment`), evitando dependência direta de nomes visíveis.
+A ferramenta utiliza um sistema de identificação interna baseado em metadados das composições, evitando dependência direta de nomes visíveis.
 
 ## Fluxo de Uso
 
