@@ -18,6 +18,12 @@ Esta ferramenta fornece uma interface simplificada para entrada de dados e autom
 
 A solução foi projetada para fluxos de trabalho que exigem atualizações frequentes de listas ordenadas (rankings), permitindo reaplicações rápidas sem comprometer a integridade das referências internas do projeto.
 
+## Requisitos
+
+- Adobe After Effects
+- Projeto previamente estruturado para suportar automação
+- Elementos com identificação interna configurada
+
 ## Principais Funcionalidades
 
 - Interface para entrada estruturada de dados
@@ -54,12 +60,6 @@ O script irá processar automaticamente todos os elementos vinculados, atualizan
 - Atualizações frequentes de listas ordenadas
 - Produções com prazos curtos
 - Ambientes colaborativos que exigem padronização
-
-## Requisitos
-
-- Adobe After Effects
-- Projeto previamente estruturado para suportar automação
-- Elementos com identificação interna configurada
 
 ## Considerações Técnicas
 
