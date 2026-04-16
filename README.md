@@ -4,7 +4,7 @@
 
 Baixe a versão mais recente ou escolha uma versão específica:
 
-- 🚀 **Última versão (recomendada):**  
+- 🚀 **Última versão (recomendada):**
   👉 [Wiser Rank System v1.6.5](../../releases/tag/Wiser-Rank-System-v1.6.5)
 
 <img width="1080" height="1080" alt="Untitled-1" src="https://github.com/user-attachments/assets/e2d799e5-faa9-4d15-aad6-a0e2475fa09c" />
