@@ -4,7 +4,7 @@
 
 ## Download 
 
-[Wiser Rank System](../../releases)
+⬇️[Wiser Rank System](../../releases)
 
 ## Visão Geral
 
