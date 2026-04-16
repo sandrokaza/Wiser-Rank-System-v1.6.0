@@ -6,7 +6,7 @@
 
 Download:
 
-[Download v1.6.0](../../releases/tag/Wiser-Rank-System-v1.6.0)
+[Wiser-Rank-System-v1.6.0](../../releases/tag/Wiser-Rank-System-v1.6.0)
 
 ## 📜 License
 
