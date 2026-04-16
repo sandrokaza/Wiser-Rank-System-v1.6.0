@@ -18,13 +18,17 @@ Esta ferramenta fornece uma interface simplificada para entrada de dados e autom
 
 ## Principais Funcionalidades
 
-- Interface para entrada estruturada de dados
-- Atualização automatizada de textos e identificadores visuais
-- Suporte a múltiplas posições (ex: Top 10, Top 20, etc.)
-- Atualização centralizada de categoria/título
-- Sistema de identificação persistente independente de nomes visuais
-- Reaplicação segura de alterações sem quebra de vínculos
-- Redução de intervenção manual em múltiplas composições
+- Interface para entrada estruturada de dados  
+- Atualização automatizada de textos e identificadores visuais  
+- Suporte a múltiplas posições (ex: Top 10, Top 20, etc.)  
+- Atualização centralizada de categoria/título  
+- Sistema de identificação persistente independente de nomes visuais  
+- Reaplicação segura de alterações sem quebra de vínculos  
+- Redução de intervenção manual em múltiplas composições  
+- Download automatizado de imagens via PowerShell a partir de múltiplos links  
+- Renomeação automática das imagens conforme a ordem do ranking  
+- Inserção automatizada das imagens nas composições correspondentes  
+- Organização estruturada dos assets para importação direta no projeto  
 
 ## Arquitetura do Sistema
 
