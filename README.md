@@ -4,9 +4,9 @@
 
 ## Releases
 
-You can download the latest version of the script here:
+Download:
 
-[Download Latest Release](../../releases)
+Última versão: [v1.6.0](../../releases/tag/v1.6.0)
 
 ## Visão Geral
 
