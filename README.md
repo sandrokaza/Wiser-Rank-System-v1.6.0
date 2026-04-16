@@ -60,3 +60,9 @@ O script irá processar automaticamente todos os elementos vinculados, atualizan
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🚀 Releases
+
+You can download the latest version of the script here:
+
+👉 [Download Latest Release](../../releases)
