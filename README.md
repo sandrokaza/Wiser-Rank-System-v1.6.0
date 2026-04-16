@@ -1,6 +1,6 @@
 # Wiser Rank System
 
-## ⬇️ Download
+## 📦 Download
 
 Baixe a versão mais recente:
 [Wiser Rank System v1.6.5](../../releases/tag/Wiser-Rank-System-v1.6.5)
