@@ -61,6 +61,6 @@ O script irá processar automaticamente todos os elementos vinculados, atualizan
 - Alterações manuais fora do padrão podem exigir reconfiguração dos identificadores
 - Recomenda-se manter um padrão organizacional para garantir máxima eficiência
 
-## License
+## Licença
 
 Este projeto está licenciado sob a licença MIT — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
