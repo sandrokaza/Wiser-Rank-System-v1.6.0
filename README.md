@@ -1,8 +1,6 @@
 
 # Wiser-Rank-System
 
-<img width="1080" height="1080" alt="Untitled-1" src="https://github.com/user-attachments/assets/9d452935-fcc1-4f80-a625-6721e1189088" />
-
 ## Download
 
 Baixe a versão mais recente ou escolha uma versão específica:
@@ -11,6 +9,8 @@ Baixe a versão mais recente ou escolha uma versão específica:
   👉 [Wiser Rank System v1.6.0](../../releases/tag/Wiser-Rank-System-v1.6.0)
 - 🗂️ **Outras versões:**  
   👉 [Wiser Rank System v1.5.5](../../releases/tag/Wiser-Rank-System-v1.5.5)
+
+<img width="1080" height="1080" alt="Untitled-1" src="https://github.com/user-attachments/assets/9d452935-fcc1-4f80-a625-6721e1189088" />
 
 ## Visão Geral
 
