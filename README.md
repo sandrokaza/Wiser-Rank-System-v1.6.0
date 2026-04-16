@@ -4,12 +4,9 @@
 
 ## Download 
 
-Baixe a versão mais recente ou escolha uma versão específica abaixo:
+Baixe a versão mais recente:
+[Wiser Rank System v1.6.0](../../releases/latest)
 
-- 📦 **Última versão (recomendada)**  
-  👉 [Wiser Rank System v1.6.0](../../releases/latest)
-- 📦 ** Outras Versões disponíveis**  
-  👉 [v1.5.5](../../releases/tag/Wiser-Rank-System-v1.5.5)
 
 ## Visão Geral
 
