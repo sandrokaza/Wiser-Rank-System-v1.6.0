@@ -13,8 +13,8 @@ Para o funcionamento correto da ferramenta, ajuste as seguintes configurações:
 
 Configure assim:
 
-- ✔️ Enable: **Allow Scripts to Write Files and Access Network**
-- ❌ Disable: **Warn User When Executing Scripts**
+- Enable: **Allow Scripts to Write Files and Access Network**
+- Disable: **Warn User When Executing Scripts**
 
 Essas configurações são necessárias para:
 
