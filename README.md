@@ -15,6 +15,25 @@ Baixe a versão mais recente:
 
 Esta ferramenta fornece uma interface simplificada para entrada de dados e automatiza a aplicação dessas informações em múltiplos elementos do projeto. A solução foi projetada para fluxos de trabalho que exigem atualizações frequentes de listas ordenadas (rankings), permitindo reaplicações rápidas sem comprometer a integridade das referências internas do projeto.
 
+## ⚠️ Importante (Configuração do After Effects)
+
+Para o funcionamento correto do script, ajuste as seguintes configurações:
+
+- Vá em: **Edit > Preferences > Scripting & Expressions**
+
+Configure assim:
+
+- ✔️ Enable: **Allow Scripts to Write Files and Access Network**
+- ❌ Disable: **Warn User When Executing Scripts**
+
+Essas configurações são necessárias para:
+
+- Permitir downloads automáticos de imagens
+- Evitar interrupções durante a execução do script
+- Garantir funcionamento completo das automações
+
+> Sem isso, algumas funcionalidades podem não funcionar corretamente ou exigir confirmação manual.
+
 ## Principais Funcionalidades
 
 - Interface para entrada estruturada de dados  
