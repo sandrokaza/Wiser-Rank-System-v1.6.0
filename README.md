@@ -7,6 +7,7 @@ Baixe a versão mais recente:
 
 <img width="1920" height="293" alt="art02" src="https://github.com/user-attachments/assets/aa7c1a63-9e29-4f0b-b522-faea37c2f220" />
 
+
 <img width="1440" height="1440" alt="Untitled-4" src="https://github.com/user-attachments/assets/ece1f7c8-b469-4a31-8baf-0138b8f8c223" />
 
 ## Visão Geral
