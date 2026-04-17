@@ -19,7 +19,7 @@ Configure assim:
 Essas configurações são necessárias para:
 
 - Permitir downloads automáticos de imagens
-- Evitar interrupções durante a execução
+- Evitar interrupções durante a execução da ferramenta
 - Garantir funcionamento completo das automações
 
 Sem isso, algumas funcionalidades podem não funcionar corretamente ou exigir confirmação manual.
