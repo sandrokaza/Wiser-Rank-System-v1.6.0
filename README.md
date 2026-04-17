@@ -22,7 +22,7 @@ Essas configurações são necessárias para:
 - Evitar interrupções durante a execução
 - Garantir funcionamento completo das automações
 
-- Sem isso, algumas funcionalidades podem não funcionar corretamente ou exigir confirmação manual.
+Sem isso, algumas funcionalidades podem não funcionar corretamente ou exigir confirmação manual.
 
 <img width="1920" height="293" alt="art02" src="https://github.com/user-attachments/assets/e073cd0d-d33e-48b6-a332-5caeceef6d44" />
 
