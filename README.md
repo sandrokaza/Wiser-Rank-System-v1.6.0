@@ -5,19 +5,9 @@
 Baixe a versão mais recente:
 [Wiser Rank System v1.7.2](../../releases/tag/Wiser-Rank-System-v1.7.2)
 
-<img width="1920" height="293" alt="art02" src="https://github.com/user-attachments/assets/e073cd0d-d33e-48b6-a332-5caeceef6d44" />
-
-<img width="1440" height="15" alt="09" src="https://github.com/user-attachments/assets/68424901-ebe2-4066-9cef-080406d862a2" />
-
-<img width="1440" height="1440" alt="Untitled-4" src="https://github.com/user-attachments/assets/29e53879-b3ec-4dd6-a0cd-8be796fc56c6" />
-
-## Visão Geral
-
-Esta ferramenta fornece uma interface simplificada para entrada de dados e automatiza a aplicação dessas informações em múltiplos elementos do projeto. A solução foi projetada para fluxos de trabalho que exigem atualizações frequentes de listas ordenadas (rankings), permitindo reaplicações rápidas sem comprometer a integridade das referências internas do projeto.
-
 ## ⚠️ Importante (Configuração do After Effects)
 
-Para o funcionamento correto do script, ajuste as seguintes configurações:
+Para o funcionamento correto da ferramenta, ajuste as seguintes configurações:
 
 - Vá em: **Edit > Preferences > Scripting & Expressions**
 
@@ -29,10 +19,20 @@ Configure assim:
 Essas configurações são necessárias para:
 
 - Permitir downloads automáticos de imagens
-- Evitar interrupções durante a execução do script
+- Evitar interrupções durante a execução
 - Garantir funcionamento completo das automações
 
 > Sem isso, algumas funcionalidades podem não funcionar corretamente ou exigir confirmação manual.
+
+<img width="1920" height="293" alt="art02" src="https://github.com/user-attachments/assets/e073cd0d-d33e-48b6-a332-5caeceef6d44" />
+
+<img width="1440" height="15" alt="09" src="https://github.com/user-attachments/assets/68424901-ebe2-4066-9cef-080406d862a2" />
+
+<img width="1440" height="1440" alt="Untitled-4" src="https://github.com/user-attachments/assets/29e53879-b3ec-4dd6-a0cd-8be796fc56c6" />
+
+## Visão Geral
+
+Esta ferramenta fornece uma interface simplificada para entrada de dados e automatiza a aplicação dessas informações em múltiplos elementos do projeto. A solução foi projetada para fluxos de trabalho que exigem atualizações frequentes de listas ordenadas (rankings), permitindo reaplicações rápidas sem comprometer a integridade das referências internas do projeto.
 
 ## Principais Funcionalidades
 
