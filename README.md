@@ -5,6 +5,10 @@
 Baixe a versão mais recente:
 [Wiser Rank System v1.7.2](../../releases/tag/Wiser-Rank-System-v1.7.2)
 
+<img width="1920" height="293" alt="art02" src="https://github.com/user-attachments/assets/f5049e5b-ee39-4b96-b760-b84b31fcb953" />
+
+<img width="1440" height="30" alt="09" src="https://github.com/user-attachments/assets/d327f1b8-7c57-4cc3-98dd-4c5b05e0974c" />
+
 <img width="1440" height="1440" alt="Untitled-4" src="https://github.com/user-attachments/assets/29e53879-b3ec-4dd6-a0cd-8be796fc56c6" />
 
 ## Visão Geral
