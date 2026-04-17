@@ -1,11 +1,11 @@
 # Wiser Rank System
 
-## ⬇️ Download
+## 📦 Download
 
 Baixe a versão mais recente:
 [Wiser Rank System v1.7.2](../../releases/tag/Wiser-Rank-System-v1.7.2)
 
-## ℹ️ Importante (Configuração do After Effects)
+## 🧩 Importante (Configuração do After Effects)
 
 Para o funcionamento correto da ferramenta, ajuste as seguintes configurações:
 
