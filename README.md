@@ -20,12 +20,15 @@ Esta ferramenta fornece uma interface simplificada para entrada de dados e autom
 - Suporte a múltiplas posições (ex: Top 10, Top 20, etc.)  
 - Atualização centralizada de categoria/título  
 - Sistema de identificação persistente independente de nomes visuais  
+- Aplicação de IDs individuais em cada composição  
 - Reaplicação segura de alterações sem quebra de vínculos  
 - Redução de intervenção manual em múltiplas composições  
-- Download automatizado de imagens via PowerShell a partir de múltiplos links  
+- Download automatizado de imagens por meio de arquivo `.bat` a partir de múltiplos links  
 - Renomeação automática das imagens conforme a ordem do ranking  
 - Inserção automatizada das imagens nas composições correspondentes  
 - Organização estruturada dos assets para importação direta no projeto  
+- Suporte à revisão prévia de arquivos CSV e TSV antes da importação  
+- Validação visual dos dados antes da aplicação no projeto 
 
 ## Arquitetura do Sistema
 
