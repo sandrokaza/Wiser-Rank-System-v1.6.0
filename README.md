@@ -24,7 +24,7 @@ Essas configurações são necessárias para:
 
 Sem isso, algumas funcionalidades podem não funcionar corretamente ou exigir confirmação manual.
 
-<img width="1390" height="1080" alt="Untitled-6" src="https://github.com/user-attachments/assets/5bac0fb0-0da4-4b15-80eb-5c87c772b0c6" />
+<img width="1536" height="1024" alt="c5813142-b93c-465f-9031-c0ec6a1cffb8" src="https://github.com/user-attachments/assets/c8c11971-96a8-43f7-86d6-901bd91434a1" />
 
 ## Visão Geral
 
