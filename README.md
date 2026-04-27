@@ -7,7 +7,7 @@ Baixe a versão mais recente:
 
 ## ⚠️ Importante (Configuração do After Effects)
 
-Para o funcionamento correto do script, ajuste as seguintes configurações:
+Para o funcionamento correto da ferramenta, ajuste as seguintes configurações:
 
 - Vá em: **Edit > Preferences > Scripting & Expressions**
 
