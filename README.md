@@ -3,7 +3,7 @@
 ## 📦 Download
 
 Baixe a versão mais recente:
-[Wiser Rank System v1.7.3](../../releases/tag/Wiser-Rank-System-v1.7.3)
+[Wiser Rank System v1.7.10](../../releases/tag/Wiser-Rank-System-v1.7.10)
 
 ## ⚠️ Importante (Configuração do After Effects)
 
