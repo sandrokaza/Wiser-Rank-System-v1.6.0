@@ -70,7 +70,19 @@
             return ".jpg";
         }
 
-        function normalizarNomeBase(txt) {
+        
+        function removerAcentosVisual(txt) {
+            txt = String(txt);
+            txt = txt.replace(/[ÁÀÂÃÄ]/g, "A").replace(/[áàâãä]/g, "a");
+            txt = txt.replace(/[ÉÈÊË]/g, "E").replace(/[éèêë]/g, "e");
+            txt = txt.replace(/[ÍÌÎÏ]/g, "I").replace(/[íìîï]/g, "i");
+            txt = txt.replace(/[ÓÒÔÕÖ]/g, "O").replace(/[óòôõö]/g, "o");
+            txt = txt.replace(/[ÚÙÛÜ]/g, "U").replace(/[úùûü]/g, "u");
+            txt = txt.replace(/[Ç]/g, "C").replace(/[ç]/g, "c");
+            return txt;
+        }
+
+function normalizarNomeBase(txt) {
             var n = String(txt).toLowerCase();
             n = n.replace(/[\u00BA\u00B0]/g, "º");
             n = n.replace(/[áàâã]/g, "a");
@@ -430,7 +442,7 @@
             }
 
             if (links.length > maxLinks) {
-                alert(nomeModo + " selecionado. Apenas os " + maxLinks + " primeiros links serão usados para salvar de foto_" + pad2(fotoInicial) + " até foto_" + pad2(fotoFinal) + ".");
+                alert(nomeModo + " selecionado. Apenas os " + maxLinks + " primeiros links serão usados.");
             }
 
             var total = Math.min(maxLinks, links.length);
@@ -713,6 +725,250 @@ function aplicarIDsPorPasta() {
             }
 
             app.endUndoGroup();
+        }
+
+
+        function getWiserMeta(layer, chave) {
+            var c = layer.comment || "";
+            var re = new RegExp("\\[WISER_" + chave + ":([^\\]]+)\\]");
+            var m = c.match(re);
+            return m ? m[1] : null;
+        }
+
+        function setWiserMeta(layer, chave, valor) {
+            var c = layer.comment || "";
+            var re = new RegExp("\\[WISER_" + chave + ":[^\\]]+\\]", "g");
+            c = c.replace(re, "");
+            if (c !== "" && c.charAt(c.length - 1) !== " ") c += " ";
+            layer.comment = c + "[WISER_" + chave + ":" + valor + "]";
+        }
+
+        function removeWiserMeta(layer, chave) {
+            var c = layer.comment || "";
+            var re = new RegExp("\\s*\\[WISER_" + chave + ":[^\\]]+\\]", "g");
+            layer.comment = c.replace(re, "");
+        }
+
+        function encontrarLayersNomeTag(comp) {
+            var dados = {
+                nomeLayer: null,
+                tagLayer: null
+            };
+
+            for (var i = 1; i <= comp.numLayers; i++) {
+                var layer = comp.layer(i);
+
+                if (!(layer instanceof TextLayer)) continue;
+
+                var nomeLayerNormalizado = normalizarNomeBase(layer.name);
+
+                if (nomeLayerNormalizado === "tag") {
+                    dados.tagLayer = layer;
+                }
+
+                if (nomeLayerNormalizado === "nome") {
+                    dados.nomeLayer = layer;
+                }
+            }
+
+            return dados;
+        }
+
+        function varrerCompsDaRaiz(rootComp, callback) {
+            var compsVisitadas = {};
+
+            function varrer(comp) {
+                if (!comp || !(comp instanceof CompItem)) return;
+
+                var id = String(comp.id);
+                if (compsVisitadas[id]) return;
+                compsVisitadas[id] = true;
+
+                callback(comp);
+
+                for (var i = 1; i <= comp.numLayers; i++) {
+                    var layer = comp.layer(i);
+
+                    if (layer.source && layer.source instanceof CompItem) {
+                        varrer(layer.source);
+                    }
+                }
+            }
+
+            varrer(rootComp);
+        }
+
+        function ocultarTagsECentralizarNomesNaRaiz() {
+            var rootComp = app.project.activeItem;
+
+            if (!(rootComp instanceof CompItem)) {
+                alert("Abra ou selecione a composição raiz primeiro.");
+                return;
+            }
+
+            app.beginUndoGroup("Ocultar Tags e Centralizar Nomes");
+
+            var compsProcessadas = 0;
+            var tagsOcultadas = 0;
+            var nomesCentralizados = 0;
+
+            varrerCompsDaRaiz(rootComp, function (comp) {
+                var dados = encontrarLayersNomeTag(comp);
+                var nomeLayer = dados.nomeLayer;
+                var tagLayer = dados.tagLayer;
+
+                if (nomeLayer && tagLayer) {
+                    var posOriginal = nomeLayer.property("Position").value;
+
+                    if (!getWiserMeta(nomeLayer, "NOME_POS")) {
+                        setWiserMeta(nomeLayer, "NOME_POS", posOriginal[0] + "," + posOriginal[1]);
+                    }
+
+                    if (!getWiserMeta(tagLayer, "TAG_ENABLED")) {
+                        setWiserMeta(tagLayer, "TAG_ENABLED", tagLayer.enabled ? "1" : "0");
+                    }
+
+                    tagLayer.enabled = false;
+                    tagsOcultadas++;
+
+                    var posTag = tagLayer.property("Position").value;
+
+                    // Mantém o X original para não deslocar textos para fora da caixa.
+                    var novoX = posOriginal[0];
+
+                    // Centralização vertical segura:
+                    // usa o espaço original entre NOME e TAG, não o centro da comp.
+                    // Isso evita quebrar layouts específicos, como o 20º lugar.
+                    var ajusteVisualY = -18;
+                    var novoY = ((posOriginal[1] + posTag[1]) / 2) + ajusteVisualY;
+
+                    nomeLayer.property("Position").setValue([novoX, novoY]);
+
+                    nomesCentralizados++;
+                    compsProcessadas++;
+                }
+            });
+
+            app.endUndoGroup();
+
+            alert(
+                "Modo sem tags aplicado.\n\n" +
+                "Composições processadas: " + compsProcessadas + "\n" +
+                "Tags ocultadas: " + tagsOcultadas + "\n" +
+                "Nomes centralizados: " + nomesCentralizados
+            );
+        }
+
+        function restaurarTagsEPosicaoNaRaiz() {
+            var rootComp = app.project.activeItem;
+
+            if (!(rootComp instanceof CompItem)) {
+                alert("Abra ou selecione a composição raiz primeiro.");
+                return;
+            }
+
+            app.beginUndoGroup("Restaurar Tags e Posição dos Nomes");
+
+            var compsProcessadas = 0;
+            var tagsRestauradas = 0;
+            var posicoesRestauradas = 0;
+
+            varrerCompsDaRaiz(rootComp, function (comp) {
+                var dados = encontrarLayersNomeTag(comp);
+                var nomeLayer = dados.nomeLayer;
+                var tagLayer = dados.tagLayer;
+                var alterou = false;
+
+                if (tagLayer) {
+                    var tagEnabledOriginal = getWiserMeta(tagLayer, "TAG_ENABLED");
+
+                    if (tagEnabledOriginal !== null) {
+                        tagLayer.enabled = (tagEnabledOriginal === "1");
+                        removeWiserMeta(tagLayer, "TAG_ENABLED");
+                    } else {
+                        tagLayer.enabled = true;
+                    }
+
+                    tagsRestauradas++;
+                    alterou = true;
+                }
+
+                if (nomeLayer) {
+                    var posOriginal = getWiserMeta(nomeLayer, "NOME_POS");
+
+                    if (posOriginal !== null) {
+                        var partes = posOriginal.split(",");
+                        if (partes.length === 2) {
+                            var x = parseFloat(partes[0]);
+                            var y = parseFloat(partes[1]);
+
+                            if (!isNaN(x) && !isNaN(y)) {
+                                nomeLayer.property("Position").setValue([x, y]);
+                                posicoesRestauradas++;
+                                alterou = true;
+                            }
+                        }
+
+                        removeWiserMeta(nomeLayer, "NOME_POS");
+                    }
+                }
+
+                if (alterou) compsProcessadas++;
+            });
+
+            app.endUndoGroup();
+
+            alert(
+                "Tags restauradas.\n\n" +
+                "Composições processadas: " + compsProcessadas + "\n" +
+                "Tags restauradas: " + tagsRestauradas + "\n" +
+                "Posições restauradas: " + posicoesRestauradas
+            );
+        }
+
+        function reduzirTamanhoNomesNaRaiz() {
+            var rootComp = app.project.activeItem;
+
+            if (!(rootComp instanceof CompItem)) {
+                alert("Abra ou selecione a composição raiz primeiro.");
+                return;
+            }
+
+            var valor = prompt("Reduzir tamanho dos textos NOME para qual porcentagem?\n\nExemplo: 90 = reduz para 90% do tamanho atual.", "90");
+
+            if (valor === null) return;
+
+            var fator = parseFloat(String(valor).replace(",", "."));
+
+            if (isNaN(fator) || fator <= 0 || fator > 200) {
+                alert("Valor inválido. Use um número entre 1 e 200.");
+                return;
+            }
+
+            fator = fator / 100;
+
+            app.beginUndoGroup("Reduzir Tamanho dos Nomes");
+
+            var nomesAjustados = 0;
+
+            varrerCompsDaRaiz(rootComp, function (comp) {
+                var dados = encontrarLayersNomeTag(comp);
+                var nomeLayer = dados.nomeLayer;
+
+                if (nomeLayer) {
+                    var textProp = nomeLayer.property("Source Text");
+                    var doc = textProp.value;
+
+                    doc.fontSize = doc.fontSize * fator;
+                    textProp.setValue(doc);
+
+                    nomesAjustados++;
+                }
+            });
+
+            app.endUndoGroup();
+
+            alert("Tamanho dos nomes ajustado.\n\nLayers NOME alteradas: " + nomesAjustados);
         }
 
         function prepararDadosImportacao(content) {
@@ -1110,6 +1366,34 @@ function aplicarIDsPorPasta() {
 
             timingPushBtn.onClick = function () {
                 aplicarTimingPushExtra();
+            };
+
+
+            var layoutPanel = extrasWin.add("panel", undefined, "Layout");
+            layoutPanel.orientation = "column";
+            layoutPanel.alignChildren = ["fill", "top"];
+            layoutPanel.margins = [12, 22, 12, 12];
+            layoutPanel.spacing = 8;
+
+            var ocultarTagsBtn = layoutPanel.add("button", undefined, "Ocultar Tags / Centralizar Nomes");
+            ocultarTagsBtn.preferredSize.height = 28;
+
+            ocultarTagsBtn.onClick = function () {
+                ocultarTagsECentralizarNomesNaRaiz();
+            };
+
+            var restaurarTagsBtn = layoutPanel.add("button", undefined, "Restaurar Tags / Posição Original");
+            restaurarTagsBtn.preferredSize.height = 28;
+
+            restaurarTagsBtn.onClick = function () {
+                restaurarTagsEPosicaoNaRaiz();
+            };
+
+            var reduzirNomesBtn = layoutPanel.add("button", undefined, "Diminuir Tamanho dos Nomes");
+            reduzirNomesBtn.preferredSize.height = 28;
+
+            reduzirNomesBtn.onClick = function () {
+                reduzirTamanhoNomesNaRaiz();
             };
 
             var fecharExtrasBtn = extrasWin.add("button", undefined, "Fechar Ferramentas Extras");
